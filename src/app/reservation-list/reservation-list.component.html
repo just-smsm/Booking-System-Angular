@@ -15,12 +15,13 @@
           <div class="card-header bg-primary text-white">
             <h5 class="card-title mb-0">{{ reservation.customerName }}</h5>
           </div>
+          
           <div class="card-body">
             <p><strong>Trip:</strong> {{ reservation.tripName || 'N/A' }}</p>
             <p><strong>Reserved By:</strong> {{ reservation.reservedByName || 'N/A' }}</p>
             <p><strong>Date:</strong> {{ reservation.reservationDate | date:'short' }}</p>
             <p><strong>Created Date:</strong> {{ reservation.createdAt | date:'short' }}</p>
-            <p><strong>Notes:</strong> {{ reservation.notes }}</p>
+            <p><strong>Notes:</strong> {{ reservation.notes || 'N/A' }}</p>
           </div>
         </div>
       </div>
