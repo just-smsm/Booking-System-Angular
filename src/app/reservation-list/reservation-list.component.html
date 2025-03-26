@@ -1,0 +1,33 @@
+<div class="container mt-5">
+    <h2 class="text-center text-primary mb-4">Reservations List</h2>
+  
+    <div *ngIf="loading" class="alert alert-info text-center">
+      <span class="spinner-border spinner-border-sm"></span> Loading reservations...
+    </div>
+    
+    <div *ngIf="errorMessage" class="alert alert-danger text-center">
+      {{ errorMessage }}
+    </div>
+  
+    <div *ngIf="reservations.length > 0" class="row">
+      <div class="col-md-6 col-lg-4 mb-4" *ngFor="let reservation of reservations">
+        <div class="card shadow-sm border-0 rounded">
+          <div class="card-header bg-primary text-white">
+            <h5 class="card-title mb-0">{{ reservation.customerName }}</h5>
+          </div>
+          <div class="card-body">
+            <p><strong>Trip:</strong> {{ reservation.tripName || 'N/A' }}</p>
+            <p><strong>Reserved By:</strong> {{ reservation.reservedByName || 'N/A' }}</p>
+            <p><strong>Date:</strong> {{ reservation.reservationDate | date:'short' }}</p>
+            <p><strong>Created Date:</strong> {{ reservation.createdAt | date:'short' }}</p>
+            <p><strong>Notes:</strong> {{ reservation.notes }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div *ngIf="reservations.length === 0 && !loading" class="alert alert-warning text-center">
+      No reservations found.
+    </div>
+  </div>
+  
