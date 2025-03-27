@@ -1,6 +1,6 @@
 # 📌 Booking System - Angular Frontend
 
-An **Angular** frontend for the **Booking System API** that connects to the **ASP.NET Core 9 backend**.  
+A simple **Angular** frontend for the **Booking System API** that connects to the **ASP.NET Core 9 backend**.  
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
 
 ---
